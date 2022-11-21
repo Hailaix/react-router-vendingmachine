@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 import VendingMachine from './VendingMachine';
@@ -8,24 +8,20 @@ import Chips from './Chips';
 import Pretzels from './Pretzels';
 
 import './App.css';
+import NavBar from './Navbar';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path='/'>
-          <VendingMachine />
-        </Route>
-        <Route exact path='/chips'>
-          <Chips />
-        </Route>
-        <Route exact path='/candybar'>
-          <CandyBar />
-        </Route>
-        <Route exact path='/pretzels'>
-          <Pretzels />
-        </Route>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<VendingMachine />} />
+          <Route path='/pretzels' element={<Pretzels />} />
+          <Route path='/chips' element={<Chips />} />
+          <Route path='/candybar' element={<CandyBar />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

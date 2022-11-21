@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Pretzels = () => {
     return (
-        <p> A bag of salted pretzels </p>
+        <div>
+            <p> A bag of salted pretzels </p>
+            <Link to='/'>Back</Link>
+        </div>
     )
 }
 
